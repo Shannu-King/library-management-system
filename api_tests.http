@@ -1,0 +1,39 @@
+### 1. Create a Book
+POST http://127.0.0.1:8000/books/
+Content-Type: application/json
+
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "isbn": "9780743273565",
+  "category": "Fiction",
+  "total_copies": 5
+}
+
+### 2. Create a Member
+POST http://127.0.0.1:8000/members/
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "membership_number": "MEM001"
+}
+
+### 3. Borrow a Book
+POST http://127.0.0.1:8000/transactions/borrow
+Content-Type: application/json
+
+{
+  "book_id": 1,
+  "member_id": 1
+}
+
+### 4. Return a Book (Replace 1 with transaction ID)
+POST http://127.0.0.1:8000/transactions/return/1
+
+### 5. List Available Books
+GET http://127.0.0.1:8000/books/available
+
+### 6. List Overdue Transactions
+GET http://127.0.0.1:8000/transactions/overdue
